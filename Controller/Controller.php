@@ -13,7 +13,7 @@ if (isset($_GET['action'])){
             include 'view/reader/detail.php';
             break;
         case 'update':
-            $controller->updateData((object)$_POST);
+            $controller->updateData((object)$_POST,$_FILES['image']);
             header("Location:index.php");
             break;
         case 'add':

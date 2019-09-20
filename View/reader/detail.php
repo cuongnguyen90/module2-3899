@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <form action="?action=update" method="post" class="form-horizontal" role="form">
+            <form action="?action=update" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
                 <div class="form-group">
                     <legend>Edit <?= $reader->getName()?> - <?= $reader->getCode()?> </legend>
                 </div>
@@ -27,9 +27,22 @@
                     <label for="">Address:</label>
                     <input type="text" class="form-control" name="address" id="" value="<?= $reader->getAddress()?>">
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label for="">Image:</label>
-                    <img src="images/<?= $reader->getImages()?>" class="img-responsive img-circle" alt="Image" width="80px">
+                    <img src="images/<?/*= $reader->getImages()*/?>" class="img-responsive img-circle" alt="Image" width="80px">
+                </div>-->
+                <div class="form-group">
+                    <label for="">Image :</label>
+                    <div class="avatar-upload">
+                        <div class="avatar-edit">
+                            <input name="image" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                            <label for="imageUpload"></label>
+                        </div>
+                        <div class="avatar-preview">
+                            <div id="imagePreview" style="background-image: url('View/upload/<?= $reader->getImages()?>');">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group hidden">
                     <label for="">ID :</label>

@@ -31,7 +31,7 @@
                      <td><?= $reader->getEmail() ?></td>
                      <td><?= $reader->getAddress() ?></td>
                      <td><?= $reader->getPhone() ?></td>
-                     <td><img src="images/<?= $reader->getImages() ?>" alt="" width="50px"></td>
+                     <td><img src="View/upload/<?= $reader->getImages() ?>" alt="" width="50px" height="50px"></td>
                      <td>
                         <a name="" id="" class="btn btn-warning" href="?action=detail&id=<?=$reader->getId();?>"
                            role="button">Edit</a>
