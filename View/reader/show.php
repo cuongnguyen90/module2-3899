@@ -33,7 +33,7 @@
                      <td><?= $reader->getPhone() ?></td>
                      <td><img src="View/upload/<?= $reader->getImages() ?>" alt="" width="50px" height="50px"></td>
                      <td>
-                        <a name="" id="" class="btn btn-warning" href="?action=detail&id=<?=$reader->getId();?>"
+                        <a name="" id="" class="btn btn-warning" href="?mode=reader&action=detail&id=<?=$reader->getId();?>"
                            role="button">Edit</a>
                         <a onclick="checkDelete(this)" data-id="<?=$reader->getId();?>" class="btn btn-danger" data-toggle="modal" href="#modal-confirm">Delete</a>
                      </td>
@@ -53,7 +53,7 @@
                         <h4 class="modal-title">Add New</h4>
                      </div>
                      <div class="modal-body">
-                        <form action="?action=add" method="post" role="form">
+                        <form action="?mode=reader&action=add" method="post" role="form" enctype="multipart/form-data">
 
                            <div class="form-group">
                               <label for="">Code</label>
@@ -75,6 +75,19 @@
                               <label for="">Phone:</label>
                               <input type="nuber" class="form-control" name="phone" id="" placeholder="Phone">
                            </div>
+                            <div class="form-group">
+                                <label for="">Image :</label>
+                                <div class="avatar-upload">
+                                    <div class="avatar-edit">
+                                        <input name="image" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                        <label for="imageUpload"></label>
+                                    </div>
+                                    <div class="avatar-preview">
+                                        <div id="imagePreview" style="background-image: url('View/upload/images.png');">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                            <div class="clearfix">
 
                            </div>

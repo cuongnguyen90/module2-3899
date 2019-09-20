@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <form action="?action=update" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+            <form action="?mode=reader&action=update" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
                 <div class="form-group">
                     <legend>Edit <?= $reader->getName()?> - <?= $reader->getCode()?> </legend>
                 </div>

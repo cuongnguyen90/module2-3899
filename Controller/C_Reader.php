@@ -32,8 +32,8 @@ class C_Reader
 
    }
 
-   public function addReader($value)
+   public function addReader($value,$file)
    {
-      return $this->model->addNewReader($value);
+      return $this->model->addNewReader($value,$file);
    }
 }

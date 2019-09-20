@@ -8,7 +8,7 @@
     function checkDelete(object) {
         let data = object.getAttribute('data-id');
         let confirm = document.getElementById('confirm-delete');
-        confirm.href = '?action=delete&id='+data;
+        confirm.href = '?mode=reader&action=delete&id='+data;
     }
     function readURL(input) {
         if (input.files && input.files[0]) {

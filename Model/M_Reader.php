@@ -60,7 +60,11 @@ class M_Reader extends Model
 
    public function updateReader($object,$file)
    {
-      $object->image = $this->uploadImage($file);
+      if (empty($file['name'])){
+         $object->image = $this->getReader($object->id)->getImages();
+      }else{
+         $object->image = $this->uploadImage($file);
+      }
       $reader = new Reader($object);
       $sql = "UPDATE reader SET code=:code, name=:name, phone=:phone,address=:address,email=:email,image=:image WHERE id=" . $reader->getId();
       $stmt = $this->model->conn->prepare($sql);
@@ -74,9 +78,14 @@ class M_Reader extends Model
 
    }
 
-   public function addNewReader($object)
+   public function addNewReader($object,$file)
    {
+      if (empty(!$file['name'])){
+         $object->image = $this->uploadImage($file);
+      }
+
       $reader = new Reader($object);
+
       $sql = "INSERT INTO reader (code,name,phone,address,email,image) VALUES (?,?,?,?,?,?)";
       $stmt = $this->model->conn->prepare($sql);
       $stmt->bindParam(1, $reader->getCode());

@@ -19,7 +19,7 @@ class Reader
       $this->email = $object->email;
       $this->phone = $object->phone;
       $this->address = $object->address;
-      $this->images = $object->image ? $object->image : 'images.png';
+      $this->images = $object->image ? $object->image : IMAGE_DEFAULT;
    }
 
    /**
@@ -37,11 +37,6 @@ class Reader
    {
       return $this->phone;
    }
-
-   /**
-    * @return mixed
-    */
-
 
    /**
     * @return mixed
